@@ -2,7 +2,7 @@
 <template>
   <div>
     <Header />
-    <slot />
+    <router-view />
     <Footer />
   </div>
 </template>
@@ -10,10 +10,16 @@
 <script>
 import Header from "./Header.vue";
 import Footer from "./Footer.vue";
+
 export default {
-  components: { Header, Footer },
+  name: "Layout",
+  components: {
+    Header,
+    Footer
+  }
 };
 </script>
-<style>
 
+<style scoped>
+/* Add your styles here */
 </style>

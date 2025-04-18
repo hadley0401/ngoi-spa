@@ -1,9 +1,9 @@
 <template>
   <section class="page-hero">
-    <div class="container">
-      <div class="hero-image">
-        <img :src="heroImage" :alt="pageTitle" />
-        <div class="hero-overlay">
+    <div class="hero-image">
+      <img :src="heroImage" :alt="pageTitle" />
+      <div class="hero-overlay">
+        <div class="content-container">
           <h1>{{ pageTitle }}</h1>
         </div>
       </div>
@@ -30,11 +30,12 @@ export default {
 <style scoped>
 .page-hero {
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .hero-image {
   position: relative;
-  height: 314px;
+  height: 400px;
   overflow: hidden;
   width: 100%;
 }
@@ -55,26 +56,35 @@ export default {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .hero-overlay h1 {
   color: white;
-  font-size: 36px;
+  font-size: 3rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-align: center;
   padding: 0 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive height for mobile */
 @media (max-width: 768px) {
   .hero-image {
-    height: 200px;
+    height: 250px;
   }
   
   .hero-overlay h1 {
-    font-size: 28px;
+    font-size: 2.2rem;
   }
 }
 </style>

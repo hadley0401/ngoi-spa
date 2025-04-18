@@ -2,11 +2,13 @@
   <div class="jumbotron" :style="backgroundStyle">
     <div class="jumbotron-overlay"></div>
     <div class="jumbotron-content">
-      <h1>{{ title }}</h1>
-      <div class="breadcrumbs" v-if="showBreadcrumbs">
-        <router-link to="/">{{ $t('nav.home') }}</router-link>
-        <span class="separator">/</span>
-        <span class="current">{{ title }}</span>
+      <div class="content-container">
+        <h1>{{ title }}</h1>
+        <div class="breadcrumbs" v-if="showBreadcrumbs">
+          <router-link to="/">{{ $t('nav.home') }}</router-link>
+          <span class="separator">/</span>
+          <span class="current">{{ title }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -42,7 +44,8 @@ export default {
 <style scoped>
 .jumbotron {
   position: relative;
-  height: 250px;
+  height: 300px;
+  width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -61,24 +64,33 @@ export default {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  width: 100%;
 }
 
 .jumbotron-content {
   position: relative;
   z-index: 2;
+  width: 100%;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 .jumbotron h1 {
-  font-size: 36px;
+  font-size: 3rem;
   margin-bottom: 15px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .breadcrumbs {
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
 .breadcrumbs a {
@@ -102,15 +114,15 @@ export default {
 
 @media (max-width: 768px) {
   .jumbotron {
-    height: 180px;
+    height: 200px;
   }
   
   .jumbotron h1 {
-    font-size: 28px;
+    font-size: 2.2rem;
   }
   
   .breadcrumbs {
-    font-size: 14px;
+    font-size: 1rem;
   }
 }
 </style>

@@ -1,0 +1,98 @@
+/* Marcellus Font */
+@font-face {
+  font-family: 'Marcellus';
+  src: url('../fonts/Marcellus-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: 
+    /* Basic Latin */
+    U+0020-U+007E,
+    /* Latin-1 Supplement */
+    U+00A0-U+00FF,
+    /* Latin Extended-A */
+    U+0102-U+0103, U+0110-U+0111, U+0128-U+0129, U+0168-U+0169, U+01A0-U+01B0,
+    /* Vietnamese specific characters */
+    U+1EA0-U+1EF9,
+    /* Combining diacritical marks */
+    U+02C6-U+0323,
+    /* Currency symbols */
+    U+20AB, U+20AC;
+}
+
+/* Roboto Font - Regular */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: 
+    /* Basic Latin */
+    U+0020-U+007E,
+    /* Latin-1 Supplement */
+    U+00A0-U+00FF,
+    /* Latin Extended-A */
+    U+0102-U+0103, U+0110-U+0111, U+0128-U+0129, U+0168-U+0169, U+01A0-U+01B0,
+    /* Vietnamese specific characters */
+    U+1EA0-U+1EF9,
+    /* Combining diacritical marks */
+    U+02C6-U+0323,
+    /* Currency symbols */
+    U+20AB, U+20AC;
+}
+
+/* Roboto Font - Bold */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: 
+    /* Basic Latin */
+    U+0020-U+007E,
+    /* Latin-1 Supplement */
+    U+00A0-U+00FF,
+    /* Latin Extended-A */
+    U+0102-U+0103, U+0110-U+0111, U+0128-U+0129, U+0168-U+0169, U+01A0-U+01B0,
+    /* Vietnamese specific characters */
+    U+1EA0-U+1EF9,
+    /* Combining diacritical marks */
+    U+02C6-U+0323,
+    /* Currency symbols */
+    U+20AB, U+20AC;
+}
+
+/* Roboto Font - Light */
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: 
+    /* Basic Latin */
+    U+0020-U+007E,
+    /* Latin-1 Supplement */
+    U+00A0-U+00FF,
+    /* Latin Extended-A */
+    U+0102-U+0103, U+0110-U+0111, U+0128-U+0129, U+0168-U+0169, U+01A0-U+01B0,
+    /* Vietnamese specific characters */
+    U+1EA0-U+1EF9,
+    /* Combining diacritical marks */
+    U+02C6-U+0323,
+    /* Currency symbols */
+    U+20AB, U+20AC;
+}
+
+/* Title Font Class */
+.title-font {
+  font-family: 'Marcellus', serif;
+  font-weight: normal;
+}
+
+/* Body Font Class */
+.body-font {
+  font-family: 'Roboto', sans-serif;
+}

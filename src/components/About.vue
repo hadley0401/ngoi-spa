@@ -2,6 +2,7 @@
   <section class="about">
     <div class="container">
       <h2 class="animate-fade-in">{{ $t('about.title') }}</h2>
+      <RiceDivider :centered="true" />
       <p class="description animate-slide-up">
         {{ $t('about.description') }}
       </p>
@@ -22,8 +23,13 @@
 </template>
 
 <script>
+import RiceDivider from './RiceDivider.vue';
+
 export default {
   name: "About",
+  components: {
+    RiceDivider
+  },
   data() {
     return {
       features: [
@@ -72,8 +78,8 @@ export default {
 h2 {
   text-align: center;
   color: var(--primary-color);
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: var(--font-size-xxl);
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
@@ -81,32 +87,41 @@ h2 {
   text-align: center;
   max-width: 900px;
   margin: 0 auto 50px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-color);
+  font-size: var(--font-size-base);
 }
 
 .features {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: clamp(15px, 2vw, 30px);
+  margin-top: clamp(30px, 4vw, 50px);
 }
 
 .feature {
-  flex: 1;
+  flex: 1 1 calc(50% - 20px);
   min-width: 250px;
+  max-width: 100%;
+  background: none;
+  border: 1px solid var(--divider-color, var(--primary-color));
+  border-radius: clamp(30px, 10vw, 300px);
+  box-shadow: none;
+  padding: clamp(20px, 3vw, 30px);
+  margin-bottom: clamp(15px, 2vw, 30px);
+  transition: border-color 0.3s;
   text-align: center;
-  /* padding: 20px; */
 }
 
-.feature-icon {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  margin: 0 auto;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  /* border: 3px solid var(--secondary-color); */
+.feature h3,
+.feature p {
+  text-align: center;
+}
+
+.feature:hover {
+  border-color: var(--secondary-color);
+  box-shadow: none;
 }
 
 .feature:hover .feature-icon {
@@ -117,13 +132,14 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin-bottom: 16px;
 }
 
 .feature h3 {
   color: var(--primary-color);
-  font-size: 20px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  font-size: var(--font-size-lg);
+  margin-bottom: 5px;
+  margin-top: 0;
   transition: color 0.3s ease;
 }
 
@@ -133,8 +149,8 @@ h2 {
 
 .feature p {
   color: var(--text-color);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
 }
 
 .animate-fade-in {
@@ -192,6 +208,41 @@ h2 {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0 0 20px;
+  }
+  
+  .feature-icon img {
+    max-width: 80px;
+    margin: 0 auto 12px;
+  }
+  
+  .about {
+    padding: 40px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .feature {
+    flex: 1 1 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media (min-width: 992px) {
+  .features {
+    flex-wrap: nowrap;
+  }
+  
+  .feature {
+    max-width: 25%;
+    margin: 0 10px;
   }
 }
 </style>

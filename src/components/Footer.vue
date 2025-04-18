@@ -14,11 +14,13 @@
       
       <div class="footer-section">
         <h3>{{ $t('footer.openingHours') }}</h3>
-        <p>9:30 - 22:00</p>
-        <p>{{ $t('footer.everyday') }}</p>
+        <ul>
+          <li>{{ $t('footer.mondayToFriday') }}: 9:00 - 20:00</li>
+          <li>{{ $t('footer.weekend') }}: 10:00 - 22:00</li>
+        </ul>
       </div>
       
-      <div class="footer-section social">
+      <div class="footer-section">
         <h3>{{ $t('footer.followUs') }}</h3>
         <div class="social-icons">
           <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -42,90 +44,168 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 40px 0 20px;
-  margin-top: 60px;
+  background-color: #8b5a00; /* Reverting to original primary-color */
+  color: var(--color-white);
+  padding: var(--spacing-2xl) 0 var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, 
+    transparent, 
+    var(--color-secondary) 15%, 
+    var(--color-secondary) 85%, 
+    transparent);
+  opacity: 0.5;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1080px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 2;
 }
 
 .footer-section {
   flex: 1;
   min-width: 200px;
-  margin-bottom: 30px;
-  padding-right: 20px;
+  margin-bottom: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
 }
 
 .footer-section h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 400;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: var(--spacing-xs);
 }
 
-.footer-section h3::after {
-  content: '';
+.footer-section h3:after {
+  content: "";
   position: absolute;
-  left: 0;
   bottom: 0;
-  width: 40px;
-  height: 2px;
-  background-color: var(--secondary-color);
+  left: 0;
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-secondary);
 }
 
 .footer-section p {
-  font-size: 14px;
+  font-size: var(--text-base);
   line-height: 1.6;
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.9;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--text-base);
+  opacity: 0.9;
 }
 
 .social-icons {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
 }
 
 .social-icon {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: var(--color-white);
+  transition: all var(--transition-normal);
+  font-size: var(--text-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: white;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-secondary);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+  z-index: -1;
 }
 
 .social-icon:hover {
-  background-color: var(--secondary-color);
+  color: var(--color-white);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.social-icon:hover::before {
+  transform: translateY(0);
 }
 
 .copyright {
   text-align: center;
-  padding-top: 20px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 14px;
+  padding-top: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--text-sm);
+  opacity: 0.8;
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
   }
   
   .footer-section {
-    margin-bottom: 25px;
+    margin-bottom: var(--spacing-lg);
+    padding-right: 0;
+    text-align: center;
+  }
+  
+  .footer-section h3:after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 0 0 50%;
+    margin-bottom: var(--spacing-xl);
   }
 }
 </style>

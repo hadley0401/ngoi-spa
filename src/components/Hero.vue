@@ -1,15 +1,13 @@
 <template>
   <section class="hero">
-    <div class="container">
-      <div class="sliders">
-        <img
-          v-for="(image, index) in images"
-          :key="index"
-          :src="image"
-          :alt="'hero-' + (index + 1)"
-          :class="{ active: currentSlide === index }"
-        />
-      </div>
+    <div class="sliders">
+      <img
+        v-for="(image, index) in images"
+        :key="index"
+        :src="image"
+        :alt="'hero-' + (index + 1)"
+        :class="{ active: currentSlide === index }"
+      />
     </div>
   </section>
 </template>
@@ -55,11 +53,16 @@ export default {
 </script>
 
 <style scoped>
+.hero {
+  width: 100%;
+  overflow: hidden;
+}
+
 .sliders {
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 314px; /* Set explicit height based on your image dimensions */
+  height: 400px; /* Increased height for better visual impact */
   width: 100%;
 }
 
@@ -83,7 +86,7 @@ export default {
 /* Responsive height for mobile */
 @media (max-width: 768px) {
   .sliders {
-    height: 200px; /* Adjust height for smaller screens */
+    height: 250px; /* Adjust height for smaller screens */
   }
 }
 </style>

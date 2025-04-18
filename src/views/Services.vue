@@ -6,6 +6,7 @@
     />
     <div class="page-inner content">
       <h1>{{ $t('services.title') }}</h1>
+      <RiceDivider :centered="true" />
       <p class="description">{{ $t('services.description') }}</p>
       
       <div class="services-list">
@@ -18,10 +19,12 @@
 
 <script>
 import PageHero from '@/components/PageHero.vue';
+import RiceDivider from '@/components/RiceDivider.vue';
 
 export default {
   components: {
-    PageHero
+    PageHero,
+    RiceDivider
   }
 };
 </script>

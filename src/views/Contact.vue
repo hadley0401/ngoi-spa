@@ -6,6 +6,7 @@
     />
     <div class="page-inner content">
       <h1>{{ $t('nav.contact') }}</h1>
+      <RiceDivider :centered="true" />
       
       <div class="contact-container">
         <div class="contact-info">
@@ -79,10 +80,12 @@
 
 <script>
 import PageHero from '@/components/PageHero.vue';
+import RiceDivider from '@/components/RiceDivider.vue';
 
 export default {
   components: {
-    PageHero
+    PageHero,
+    RiceDivider
   },
   data() {
     return {
