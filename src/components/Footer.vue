@@ -3,29 +3,28 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>{{ $t('footer.address') }}</h3>
-        <p>123 Nguyễn Văn A, Quận Tân Bình, TP.HCM</p>
+        <p>353/11A Nguyễn Trọng Tuyển, Phường 1, Tân Bình, TP.HCM</p>
       </div>
       
       <div class="footer-section">
         <h3>{{ $t('footer.contact') }}</h3>
-        <p>{{ $t('footer.phone') }}: +84 123 456 789</p>
-        <p>{{ $t('footer.email') }}: info@ngoispa.com</p>
+        <p>{{ $t('footer.phone') }}: 0773 222 558</p>
+        <p>{{ $t('footer.email') }}: ngoispa@gmail.com</p>
       </div>
       
       <div class="footer-section">
         <h3>{{ $t('footer.openingHours') }}</h3>
         <ul>
-          <li>{{ $t('footer.mondayToFriday') }}: 9:00 - 20:00</li>
-          <li>{{ $t('footer.weekend') }}: 10:00 - 22:00</li>
+          <li>{{ $t('footer.everyday') }}: 9:30 - 20:00</li>
         </ul>
       </div>
       
       <div class="footer-section">
         <h3>{{ $t('footer.followUs') }}</h3>
         <div class="social-icons">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/ngoispa" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ngoispa/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@ngoispa" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
     </div>

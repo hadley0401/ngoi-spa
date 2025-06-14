@@ -61,6 +61,8 @@ html, body {
 :root {
   --primary-color: var(--color-primary);
   --secondary-color: var(--color-secondary);
+  --accent-color: var(--color-accent);
+  --divider-color: var(--color-secondary);
   --text-color: var(--color-text);
   --background-color: var(--color-primary);
   --white: var(--color-white);

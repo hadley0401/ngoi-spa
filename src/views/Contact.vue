@@ -12,50 +12,23 @@
         <div class="contact-info">
           <div class="info-item">
             <h3>{{ $t('footer.address') }}</h3>
-            <p>123 Nguyễn Văn A, Quận Tân Bình, TP.HCM</p>
+            <p>353/11A Nguyễn Trọng Tuyển, Phường 1, Tân Bình, TP.HCM</p>
           </div>
           
           <div class="info-item">
             <h3>{{ $t('footer.phone') }}</h3>
-            <p>+84 123 456 789</p>
+            <p>0773 222 558</p>
           </div>
           
           <div class="info-item">
             <h3>{{ $t('footer.email') }}</h3>
-            <p>info@ngoispa.com</p>
+            <p>ngoispa@gmail.com</p>
           </div>
           
           <div class="info-item">
             <h3>{{ $t('footer.openingHours') }}</h3>
-            <p>9:30 - 22:00 (Thứ 2 - Chủ nhật)</p>
+            <p>9:30 - 20:00</p>
           </div>
-        </div>
-        
-        <div class="contact-form">
-          <h3>{{ $t('common.contactUs') }}</h3>
-          <form @submit.prevent="submitForm">
-            <div class="form-group">
-              <label for="name">{{ $t('contact.name') }}</label>
-              <input type="text" id="name" v-model="form.name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">{{ $t('contact.email') }}</label>
-              <input type="email" id="email" v-model="form.email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="phone">{{ $t('contact.phone') }}</label>
-              <input type="tel" id="phone" v-model="form.phone">
-            </div>
-            
-            <div class="form-group">
-              <label for="message">{{ $t('contact.message') }}</label>
-              <textarea id="message" v-model="form.message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">{{ $t('contact.send') }}</button>
-          </form>
         </div>
       </div>
       
@@ -65,7 +38,7 @@
         <div class="google-map">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1702043265072!2d106.66451961246436!3d10.79827278930738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175293bdd3d9e57%3A0x286f860ba25730ee!2zTmfDs2kgU3Bh!5e0!3m2!1svi!2s!4v1744738970682!5m2!1svi!2s" 
-            width="100%" 
+            width="100%"
             height="450" 
             style="border:0;" 
             allowfullscreen="" 
@@ -89,29 +62,8 @@ export default {
   },
   data() {
     return {
-      form: {
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      }
     }
   },
-  methods: {
-    submitForm() {
-      // This is a placeholder for form submission logic
-      alert('Form submitted! This is a demo functionality.');
-      this.resetForm();
-    },
-    resetForm() {
-      this.form = {
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      };
-    }
-  }
 }
 </script>
 

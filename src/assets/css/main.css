@@ -10,6 +10,7 @@
   --color-primary-dark: #5f4339;    /* Darker version for text and accents */
   --color-secondary: #c5a880;       /* Sand Dune - complementary warm color */
   --color-tertiary: #4b6a62;        /* Green Moss - natural accent */
+  --color-accent: #f9f6f2;          /* Cream/eggshell - subtle accent color */
   
   --color-bg-main: #f9f6f2;         /* Cream/eggshell - main background */
   --color-bg-alt: #f0ebe4;          /* Slightly darker background for alternating sections */

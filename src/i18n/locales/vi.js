@@ -20,11 +20,14 @@ export default {
   // Add translations for About section
   about: {
     title: 'ĐÔI NÉT VỀ NGÓI SPA',
-    description: 'Bạn đang tìm kiếm một nơi để làm đẹp và thư giãn? Bạn muốn được chăm sóc tóc, da và móng tay của mình bởi những chuyên gia hàng đầu? Bạn muốn trải nghiệm những dịch vụ chất lượng với giá cả hợp lý? Nếu câu trả lời là có, thì bạn không nên bỏ qua tiệm Ngói Spa – một trong những địa chỉ làm đẹp uy tín và nổi tiếng tại quận Tân Bình',
-    services: 'Ngói Spa là một tiệm làm đẹp đa dạng và toàn diện, cung cấp các dịch vụ như làm tóc, spa, nail và nhiều hơn nữa. Bạn có thể chọn lựa từ nhiều kiểu tóc phù hợp với khuôn mặt và phong cách của mình, từ tóc ngắn cá tính đến tóc dài quyến rũ. Bạn cũng có thể thay đổi màu sắc và kiểu uốn duỗi tóc theo ý muốn. Đội ngũ nhân viên của Ngói Spa sẽ tư vấn và thực hiện cho bạn một kiểu tóc hoàn hảo.',
-    spa: 'Ngoài ra, bạn cũng có thể chăm sóc da mặt và cơ thể tại Ngói Spa. Tiệm cung cấp các loại spa khác nhau, từ spa dưỡng ẩm, spa trị mụn đến spa massage thư giãn. Bạn sẽ được sử dụng các sản phẩm chất lượng cao, an toàn và hiệu quả. Bạn cũng sẽ được thưởng thức không gian yên tĩnh và thoải mái, giúp bạn xua tan mọi căng thẳng và mệt mỏi.',
-    nail: 'Đừng quên làm đẹp cho đôi bàn tay và bàn chân của bạn với các dịch vụ nail tại Ngói Spa. Bạn có thể lựa chọn từ nhiều màu sơn và kiểu nail khác nhau, từ nail đơn giản đến nail nghệ thuật. Bạn cũng có thể làm móng gel hoặc móng acrylic để kéo dài tuổi thọ của móng. Bạn sẽ được hài lòng với kết quả cuối cùng khi ra khỏi tiệm.',
-    contact: 'Ngói Spa là một tiệm làm đẹp lý tưởng cho bạn khi bạn muốn làm mới bản thân. Tiệm có giờ làm việc linh hoạt, từ 9h30 sáng đến 22h tối, từ thứ hai đến chủ nhật. Tiệm cũng có nhiều ưu đãi và khuyến mãi hấp dẫn cho khách hàng thân thiết. Hãy liên hệ với Ngói Spa ngay hôm nay để đặt lịch hẹn và được phục vụ tận tình.',
+    description:
+        'Bạn đang tìm kiếm một nơi để rũ bỏ căng thẳng, nuôi dưỡng cơ thể và làm mới tâm hồn? Hãy để Ngói Spa trở thành chốn dừng chân nhẹ nhàng cho bạn sau những bộn bề thường nhật.',
+    services: 'Tọa lạc tại quận Tân Bình, Ngói Spa là điểm đến lý tưởng để bạn tận hưởng những phút giây thư thái với các dịch vụ chăm sóc toàn diện như spa thư giãn, facial chăm sóc da mặt, và nail nghệ thuật. Mỗi dịch vụ tại Ngói Spa được thực hiện bởi đội ngũ chuyên viên tận tâm, kỹ thuật vững vàng và luôn lắng nghe nhu cầu của bạn.',
+    spa:
+    'Chúng tôi sử dụng các liệu pháp spa nhẹ nhàng kết hợp với sản phẩm chất lượng cao, an toàn và dịu nhẹ cho làn da. Dù bạn cần cấp ẩm, làm dịu da nhạy cảm hay thư giãn bằng massage, Ngói Spa đều có giải pháp dành riêng cho bạn – trong một không gian yên tĩnh, dịu dàng và đầy cảm hứng chữa lành.',
+    nail:
+        'Đừng quên chiều chuộng đôi tay và bàn chân của bạn với các dịch vụ làm nail tại Ngói Spa. Từ những thiết kế đơn giản, thanh lịch đến các mẫu nail nghệ thuật sáng tạo, chúng tôi mang đến vẻ đẹp chỉn chu và đầy cá tính cho từng bộ móng.',
+    contact: 'Mở cửa từ 9:30 sáng đến 8:00 tối mỗi ngày, Ngói Spa chào đón bạn với sự nhẹ nhàng, ấm áp và dịch vụ tận tâm. Ngói Spa – Không gian thư giãn giữa lòng thành phố 🌿' ,
     features: {
       professional: {
         title: 'KTV chuyên nghiệp',
@@ -48,6 +51,7 @@ export default {
   services: {
     title: 'DỊCH VỤ CỦA CHÚNG TÔI',
     description: 'Khám phá các dịch vụ làm đẹp và thư giãn cao cấp của chúng tôi',
+    note: 'Dưới đây là menu tham khảo tại Ngói, chúng tôi thường sẽ có những thay đổi nhỏ để làm mới dịch vụ hàng tháng cũng như áp dụng giảm giá 10-30%.',
     viewAll: 'Xem tất cả dịch vụ'
   },
   // Add translations for Gallery section
