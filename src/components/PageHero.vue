@@ -1,7 +1,7 @@
 <template>
   <section class="page-hero">
     <div class="hero-image">
-      <img :src="heroImage" :alt="pageTitle" />
+      <img :alt="pageTitle" :src="heroImage"/>
       <div class="hero-overlay">
         <div class="content-container">
           <h1>{{ pageTitle }}</h1>
@@ -82,9 +82,44 @@ export default {
   .hero-image {
     height: 250px;
   }
-  
+
   .hero-overlay h1 {
     font-size: 2.2rem;
+  }
+}
+
+/* Thêm vào CSS của Hero component để tránh bị header che */
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 80px; /* Adjust based on header height */
+}
+
+/* Hoặc thêm vào body/main container */
+body {
+  padding-top: 80px; /* Space for fixed header */
+}
+
+/* Alternative: Sử dụng CSS variable để flexible hơn */
+:root {
+  --header-height: 80px;
+}
+
+.hero {
+  margin-top: var(--header-height);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  :root {
+    --header-height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 70px;
   }
 }
 </style>

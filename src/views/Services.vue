@@ -1,52 +1,56 @@
 <template>
   <div>
-    <PageHero 
-      :page-title="$t('nav.services')"
-      :hero-image="require('@/assets/HAIR-SALON-SPA-3-1024x314.png')"
+    <PageHero
+        :hero-image="require('@/assets/HAIR-SALON-SPa-1024x314.png')"
+        :page-title="$t('nav.services')"
     />
     <div class="page-inner content">
       <h1>{{ $t('services.title') }}</h1>
-      <RiceDivider :centered="true" />
+      <RiceDivider :centered="true"/>
       <p class="description">{{ $t('services.description') }}</p>
-      
+
       <div class="promotion-banner">
         <p>{{ $t('services.note') }}</p>
       </div>
-      
+
       <div class="menu-section">
         <h2>Our Menu</h2>
         <div class="menu-images">
-          <div class="menu-image-container" v-for="img in menuImages" :key="img.src">
-            <img :src="img.src" :alt="img.alt" class="menu-image" @click="openMenuModal(img.src)" style="cursor: zoom-in;" />
+          <div v-for="img in menuImages" :key="img.src" class="menu-image-container">
+            <img :alt="img.alt" :src="img.src" class="menu-image" style="cursor: zoom-in;"
+                 @click="openMenuModal(img.src)"/>
           </div>
         </div>
       </div>
       <div v-if="showMenuModal" class="menu-modal" @click.self="closeMenuModal">
         <button class="modal-close" @click="closeMenuModal">&times;</button>
         <div class="modal-zoom-controls">
-          <button @click="zoomOut" :disabled="zoomLevel <= 1">-</button>
+          <button :disabled="zoomLevel <= 1" @click="zoomOut">-</button>
           <span>{{ Math.round(zoomLevel * 100) }}%</span>
           <button @click="zoomIn">+</button>
         </div>
-        <img :src="modalMenuImg" class="modal-img" :style="{ transform: `scale(${zoomLevel})` }" @wheel.prevent="onWheelZoom" />
+        <img :src="modalMenuImg" :style="{ transform: `scale(${zoomLevel})` }" class="modal-img"
+             @wheel.prevent="onWheelZoom"/>
       </div>
-      
+
       <div class="services-section">
         <h2>Nail Art Designs</h2>
-        <p class="service-description">Explore our beautiful nail art designs, created by our professional nail artists. Choose from a variety of styles and colors to match your personality.</p>
+        <p class="service-description">Explore our beautiful nail art designs, created by our professional nail artists.
+          Choose from a variety of styles and colors to match your personality.</p>
         <div class="service-images">
-          <div class="service-image-container" v-for="(image, index) in nailImages" :key="`nail-${index}`">
-            <img :src="image.url" :alt="image.alt" class="service-image" />
+          <div v-for="(image, index) in nailImages" :key="`nail-${index}`" class="service-image-container">
+            <img :alt="image.alt" :src="image.url" class="service-image"/>
           </div>
         </div>
       </div>
-      
+
       <div class="services-section">
         <h2>Eyelash Extensions</h2>
-        <p class="service-description">Our eyelash extensions are designed to enhance your natural beauty. We use premium materials for a comfortable, long-lasting result.</p>
+        <p class="service-description">Our eyelash extensions are designed to enhance your natural beauty. We use
+          premium materials for a comfortable, long-lasting result.</p>
         <div class="eyelash-images">
-          <div class="service-image-container" v-for="(image, index) in eyelashImages" :key="`eyelash-${index}`">
-            <img :src="image.url" :alt="image.alt" class="service-image" />
+          <div v-for="(image, index) in eyelashImages" :key="`eyelash-${index}`" class="service-image-container">
+            <img :alt="image.alt" :src="image.url" class="service-image"/>
           </div>
         </div>
       </div>
@@ -66,34 +70,46 @@ export default {
   data() {
     return {
       menuImages: [
-        { src: require('@/assets/menu/menu-front.png'), alt: 'Menu Front' },
-        { src: require('@/assets/menu/menu-back.png'), alt: 'Menu Back' }
+        {src: require('@/assets/menu/menu-front.png'), alt: 'Menu Front'},
+        {src: require('@/assets/menu/menu-back.png'), alt: 'Menu Back'}
       ],
       showMenuModal: false,
       modalMenuImg: '',
       zoomLevel: 1,
       nailImages: [
-        { url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-11.png', alt: 'Nail design 1' },
-        { url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-269.jpg', alt: 'Nail design 2' },
-        { url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-278.jpg', alt: 'Nail design 3' },
-        { url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-195.jpg', alt: 'Nail design 4' },
-        { url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-212.jpg', alt: 'Nail design 5' }
+        {url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-11.png', alt: 'Nail design 1'},
+        {url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-269.jpg', alt: 'Nail design 2'},
+        {url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-278.jpg', alt: 'Nail design 3'},
+        {url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-195.jpg', alt: 'Nail design 4'},
+        {url: 'https://www.lookme.vn/blog/wp-content/uploads/2021/01/unnamed-file-212.jpg', alt: 'Nail design 5'}
       ],
       eyelashImages: [
-        { url: 'https://www.micropigmentation.academy/wp-content/uploads/2020/10/122224564_375782766800323_4181425100806826705_n-scaled.jpg', alt: 'Eyelash extensions 1' },
-        { url: 'https://img.grouponcdn.com/metro_draft_service/2MSm9d6MMj513d3SNypgMoNEa5YY/2M-1079x647/v1/c600x362.webp', alt: 'Eyelash extensions 2' },
-        { url: 'https://img.grouponcdn.com/deal/4KpfGvso9WqJxRFirQ2EvMvd6WjZ/4K-3956x2369/v1/sc600x600.webp', alt: 'Eyelash extensions 3' },
-        { url: 'https://img.grouponcdn.com/metro_draft_service/3GysVBQCPG1HqqJEWW9pTD148yJg/3G-1221x1029/v1/c600x362.webp', alt: 'Eyelash extensions 4' },
-        { url: 'https://ubeauty.vn/wp-content/uploads/2024/07/noi-mi-sole-thai-5.jpg', alt: 'Eyelash extensions 5' },
-        { url: 'https://media.loveitopcdn.com/3804/203714-nhung-kieu-noi-mi-ms-hani-1.jpg', alt: 'Eyelash extensions 6' }
+        {
+          url: 'https://www.micropigmentation.academy/wp-content/uploads/2020/10/122224564_375782766800323_4181425100806826705_n-scaled.jpg',
+          alt: 'Eyelash extensions 1'
+        },
+        {
+          url: 'https://img.grouponcdn.com/metro_draft_service/2MSm9d6MMj513d3SNypgMoNEa5YY/2M-1079x647/v1/c600x362.webp',
+          alt: 'Eyelash extensions 2'
+        },
+        {
+          url: 'https://img.grouponcdn.com/deal/4KpfGvso9WqJxRFirQ2EvMvd6WjZ/4K-3956x2369/v1/sc600x600.webp',
+          alt: 'Eyelash extensions 3'
+        },
+        {
+          url: 'https://img.grouponcdn.com/metro_draft_service/3GysVBQCPG1HqqJEWW9pTD148yJg/3G-1221x1029/v1/c600x362.webp',
+          alt: 'Eyelash extensions 4'
+        },
+        {url: 'https://ubeauty.vn/wp-content/uploads/2024/07/noi-mi-sole-thai-5.jpg', alt: 'Eyelash extensions 5'},
+        {url: 'https://media.loveitopcdn.com/3804/203714-nhung-kieu-noi-mi-ms-hani-1.jpg', alt: 'Eyelash extensions 6'}
       ]
     };
   },
   computed: {
     currentMonth() {
       const months = [
-        'January', 'February', 'March', 'April', 
-        'May', 'June', 'July', 'August', 
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
         'September', 'October', 'November', 'December'
       ];
       const date = new Date();
@@ -253,9 +269,12 @@ h2 {
 
 .menu-modal {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 9999;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -265,7 +284,7 @@ h2 {
   max-width: 90vw;
   max-height: 80vh;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   background: #fff;
   transition: transform 0.3s;
 }
@@ -320,11 +339,11 @@ h2 {
   .menu-images {
     gap: 20px;
   }
-  
+
   .menu-image-container {
     max-width: 90%;
   }
-  
+
   .service-image-container {
     width: 160px;
     height: 160px;
@@ -336,7 +355,7 @@ h2 {
     width: 140px;
     height: 140px;
   }
-  
+
   .service-images {
     gap: 10px;
   }

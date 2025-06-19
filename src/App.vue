@@ -1,8 +1,8 @@
 <template>
-  <div class="app" id="app">
-    <LoadingScreen :loading="isLoading" />
-    <transition name="fade" mode="out-in">
-      <Layout v-if="!isLoading" />
+  <div id="app" class="app">
+    <LoadingScreen :loading="isLoading"/>
+    <transition mode="out-in" name="fade">
+      <Layout v-if="!isLoading"/>
     </transition>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
 /* Using variables from main.css instead of hardcoded values */
 html, body {
   height: 100%;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* Main CSS file now handles most of these styles */
@@ -66,9 +66,15 @@ html, body {
   --text-color: var(--color-text);
   --background-color: var(--color-primary);
   --white: var(--color-white);
+  --primary-gold: #C4A461;
+  --dark-gold: #B8954A;
+  --white: #FFFFFF;
+  --cream: #F5F2E9;
+  --text-dark: #4A4A4A;
+  --text-light: #777777;
   --title-font: 'Marcellus', serif;
   --body-font: 'Roboto', sans-serif;
-  
+
   /* Font sizes - responsive with clamp */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
@@ -78,7 +84,7 @@ html, body {
   --font-size-xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
   --font-size-xxl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
   --font-size-xxxl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
-  
+
   /* Spacing */
   --container-padding: clamp(15px, 3vw, 30px);
   --section-spacing: clamp(40px, 5vw, 80px);
@@ -107,7 +113,7 @@ img {
   .hide-mobile {
     display: initial;
   }
-  
+
   .hide-desktop {
     display: none;
   }
@@ -215,23 +221,45 @@ p, li {
 
 /* Animation Keyframes */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .container,
@@ -310,15 +338,15 @@ ul {
   html, body {
     font-size: 15px;
   }
-  
+
   h1, .h1 {
     font-size: 2.2rem;
   }
-  
+
   h2, .h2 {
     font-size: 1.8rem;
   }
-  
+
   h3, .h3 {
     font-size: 1.5rem;
   }

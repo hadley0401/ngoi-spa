@@ -2,11 +2,11 @@
   <section class="hero">
     <div class="sliders">
       <img
-        v-for="(image, index) in images"
-        :key="index"
-        :src="image"
-        :alt="'hero-' + (index + 1)"
-        :class="{ active: currentSlide === index }"
+          v-for="(image, index) in images"
+          :key="index"
+          :alt="'hero-' + (index + 1)"
+          :class="{ active: currentSlide === index }"
+          :src="image"
       />
     </div>
   </section>
@@ -20,7 +20,7 @@ export default {
       images: [
         require("@/assets/HAIR-SALON-SPa-2-1024x314.png"),
         require("@/assets/HAIR-SALON-SPa-1024x314.png"),
-        require("@/assets/HAIR-SALON-SPA-3-1024x314.png"),
+        // require("@/assets/HAIR-SALON-SPA-3-1024x314.png"),
       ],
       currentSlide: 0,
     };
@@ -87,6 +87,41 @@ export default {
 @media (max-width: 768px) {
   .sliders {
     height: 250px; /* Adjust height for smaller screens */
+  }
+}
+
+/* Thêm vào CSS của Hero component để tránh bị header che */
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 80px; /* Adjust based on header height */
+}
+
+/* Hoặc thêm vào body/main container */
+body {
+  padding-top: 80px; /* Space for fixed header */
+}
+
+/* Alternative: Sử dụng CSS variable để flexible hơn */
+:root {
+  --header-height: 80px;
+}
+
+.hero {
+  margin-top: var(--header-height);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  :root {
+    --header-height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 70px;
   }
 }
 </style>

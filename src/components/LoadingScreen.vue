@@ -1,8 +1,8 @@
 <template>
-  <div class="loading-container" v-if="loading">
+  <div v-if="loading" class="loading-container">
     <div class="loading-content">
       <div class="logo-container">
-        <img src="@/assets/logo-ngoi.png" alt="Ngói Spa" class="loading-logo" />
+        <img alt="Ngói Spa" class="loading-logo" src="@/assets/logo-ngoi.png"/>
       </div>
       <div class="loading-spinner">
         <div class="spinner-circle"></div>
@@ -42,9 +42,15 @@ export default {
 }
 
 @keyframes fadeBackground {
-  0% { background-color: #fff; }
-  50% { background-color: #f5f1ec; }
-  100% { background-color: #764908; }
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #f5f1ec;
+  }
+  100% {
+    background-color: #764908;
+  }
 }
 
 .loading-content {
@@ -60,16 +66,22 @@ export default {
 }
 
 @keyframes pulseLogo {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .loading-logo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  //box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .loading-spinner {
@@ -102,8 +114,12 @@ export default {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-text {
@@ -114,8 +130,14 @@ export default {
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 </style>

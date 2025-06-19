@@ -8,7 +8,7 @@
       </p>
 
       <div class="features">
-        <div v-for="(feature, index) in features" :key="index" class="feature" 
+        <div v-for="(feature, index) in features" :key="index" class="feature"
              :class="{'animate-slide-in-left': index % 2 === 0, 'animate-slide-in-right': index % 2 !== 0}"
              :style="{ animationDelay: `${0.2 * index}s` }">
           <div class="feature-icon">
@@ -217,12 +217,12 @@ h2 {
     max-width: 100%;
     margin: 0 0 20px;
   }
-  
+
   .feature-icon img {
     max-width: 80px;
     margin: 0 auto 12px;
   }
-  
+
   .about {
     padding: 40px 0;
   }
@@ -239,7 +239,7 @@ h2 {
   .features {
     flex-wrap: nowrap;
   }
-  
+
   .feature {
     max-width: 25%;
     margin: 0 10px;

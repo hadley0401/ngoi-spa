@@ -2,7 +2,7 @@
   <div>
     <PageHero 
       :page-title="$t('nav.about')"
-      :hero-image="require('@/assets/HAIR-SALON-SPa-2-1024x314.png')"
+      :hero-image="require('@/assets/HAIR-SALON-SPa-1024x314.png')"
     />
     <div class="page-inner content about-art-layout">
       <div class="about-img-col">

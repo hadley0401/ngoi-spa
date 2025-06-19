@@ -5,6 +5,7 @@
     <Services />
     <SpaceGallery />
     <VideoSection />
+    <Review />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import About from "@/components/About.vue";
 import Services from "@/components/Services.vue";
 import SpaceGallery from "@/components/SpaceGallery.vue";
 import VideoSection from "@/components/VideoSection.vue";
+import Review from "@/components/Review.vue";
 
 export default {
   name: "Home",
@@ -23,6 +25,7 @@ export default {
     Services,
     SpaceGallery,
     VideoSection,
+    Review
   },
 };
 </script>
